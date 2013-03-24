@@ -13,6 +13,7 @@ all: install-deps build
 install-deps:
 	npm install jquery-browserify
 	npm install browserify
+	npm install three
 
 build:
 	$(BROWSERIFY) $(BROWSERIFY_FLAGS) examples/demo1.js -o examples/demo1.bundle.js
