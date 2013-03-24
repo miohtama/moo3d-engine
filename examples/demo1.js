@@ -1,17 +1,17 @@
+var THREE = require('three');
+var $ = require('jquery-browserify');
+
 (function() {
 
     "use strict";
 
-    var THREE = require('three');
-    var $ = require('jquery-browserify');
 
     var camera, scene, renderer;
     var geometry, material, mesh;
 
-    init();
-    animate();
-
     function init() {
+
+        console.log("init");
 
         camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 1, 10000 );
         camera.position.z = 1000;
@@ -27,7 +27,7 @@
         renderer = new THREE.WebGLRenderer();
         renderer.setSize( window.innerWidth, window.innerHeight );
 
-        document.body.appendChild( renderer.domElement );
+        window.document.body.appendChild( renderer.domElement );
 
     }
 
@@ -43,4 +43,9 @@
 
     }
 
-});
+    $(document).ready(function() {
+        init();
+        animate();
+    });
+
+})();

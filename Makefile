@@ -3,6 +3,8 @@ BASE=$(shell pwd)
 
 BROWSERIFY:=$(BASE)/node_modules/browserify/bin/cmd.js
 
+BROWSERIFY_FLAGS:=--debug
+
 all: install-deps build
 
 #
@@ -13,5 +15,5 @@ install-deps:
 	npm install browserify
 
 build:
-	$(BROWSERIFY) examples/demo1.js -o examples/demo1.bundle.js
+	$(BROWSERIFY) $(BROWSERIFY_FLAGS) examples/demo1.js -o examples/demo1.bundle.js
 
